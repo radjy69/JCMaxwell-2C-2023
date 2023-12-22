@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>replit</title>
+<link href = "style.css" rel="stylesheet" type=text/css />
+  <style>
+
+#palla.jpg{
+         width: 10px;
+         height: 10px;
+         position: relative;
+         
+       }
+
+#container{
+         width: 400px;
+         height: 400px;
+         position: relative;
+         background-color: grey;
+      border:2px solid black;
+}
+      #alto{
+         width: 50px;
+         height: 50px;
+         position: top;
+         background-color: blue;
+      
+         
+       }
+       #basso{
+         width: 50px;
+         height: 50px;
+         position: bottom;
+         background-color: blue;
+        }
+       
+       #destra{
+         width: 50px;
+         height: 50px;
+         position: left;
+         background-color: blue;
+        }
+       #sinistra{
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        position: right;
+       
+       }
+       
+  </style>
+  </head>
+  <body>
+    <div id="container">
+        
+    <button id ="alto" onclick="moveImage()">alto</button>
+    <button id ="basso" onclick="moveImage()">basso</button>
+    <button id ="destra" onclick="moveImage()">destra</button>
+    <button id ="sinistra" onclick="moveImage()">sinistra</button>
+  
+    <div>
+        <img src="palla.jpg" alt="imagine" width="50" height="50">
+      </div>
+    
+</div>
+    </div>
+    <script>
+
+const pallone = document.getElementById('palla.jpg');
+let newX=0;
+
+function moveImage(direction) {
+  newX=newX=5;
+
+}
+const movingImage = document.getElementById('palla.jpg');
+
+function moveImage(direction) {
+    const step = 10; // Adjust the step size as needed
+    let currentLeft = parseInt(getComputedStyle(movingImage).left) || 0;
+    let currentTop = parseInt(getComputedStyle(movingImage).top) || 0;
+    let currentBottom = parseInt(getComputedStyle(movingImage).Bottom) || 0;
+    let currentRight = parseInt(getComputedStyle(movingImage).Right) || 0;
+
+    switch (direction) {
+        case 'top':
+            movingImage.style.top = `${currentTop - step}px`;
+            break;
+        case 'bottom':
+            movingImage.style.bottom = `${currentBottom + step}px`;
+            break;
+        case 'left':
+            movingImage.style.left = `${currentLeft - step}px`;
+            break;
+        case 'right':
+            movingImage.style.right = `${currentRight + step}px`;
+            break;
+        default:
+            break;
+    }
+}
+
+</script>
+</body>
